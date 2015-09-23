@@ -5,8 +5,8 @@
     <a ui-sref="answered-questions({ questionId: item.id })">{{ item.input }}</a>
     <button class="btn btn-primary" ng-click="showanswer = showanswer ? false : true">Answer this question</button>
   <div ng-show="showanswer">
-    <h1>Derp</h1>
-    <form>
+    <h4>{{ item.input }}</h4>
+    <form ng-submit="addAnswer()" class="form-inline" role="form">
       <div class = "form-group">
         <label>Answer:</label>
         <input type="text" class="form-control">
@@ -17,5 +17,7 @@
   </div>
 </div>
 
-
+<div ng-repeat="item in answers">
+<p>{{ item.answerInput }}</p>
+</div>
 <div ui-view></div>

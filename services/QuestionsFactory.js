@@ -5,5 +5,6 @@ experts.factory('QuestionsFactory', function QuestionsFactory() {
     factory.questions.push({ input: factory.userQuestion, id: factory.questions.length + 1, answers: [] });
     factory.userQuestion = null;
   };
+
   return factory;
 });

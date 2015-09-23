@@ -7,7 +7,6 @@ experts.config(function($stateProvider, $urlRouterProvider){
     controller: "QuestionsCtrl"
   });
 
-
   $stateProvider.state('experts-state', {
     url:"/experts-state",
     templateUrl: "partials/experts-state.html",
