@@ -2,6 +2,20 @@
 <h3>Here are some questions you could answer.</h3>
 <div ng-show="questions.length">
   <div ng-repeat="item in questions">
-    <p>{{item.question}}<button class="btn btn-primary">Answer this question</button></p>
+    <a ui-sref="answered-questions({ questionId: item.id })">{{ item.input }}</a>
+    <button class="btn btn-primary" ng-click="showanswer = showanswer ? false : true">Answer this question</button>
+  <div ng-show="showanswer">
+    <h1>Derp</h1>
+    <form>
+      <div class = "form-group">
+        <label>Answer:</label>
+        <input type="text" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+  </div>
   </div>
 </div>
+
+
+<div ui-view></div>
