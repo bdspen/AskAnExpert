@@ -1,3 +1,7 @@
-<div ng-repeat="item in questions">
-<p>{{item.question}}<button class="btn btn-primary">Answer this question</button></p>
+<h2>Expert</h2>
+<h3>Here are some questions you could answer.</h3>
+<div ng-show="questions.length">
+  <div ng-repeat="item in questions">
+    <p>{{item.question}}<button class="btn btn-primary">Answer this question</button></p>
+  </div>
 </div>

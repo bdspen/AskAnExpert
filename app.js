@@ -3,6 +3,13 @@ var experts = angular.module('experts', ['ui.router']);
 experts.config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('home', {
     url:"",
-    templateUrl: "partials/home.html"
+    templateUrl: "partials/home.html",
+    controller: "QuestionsCtrl"
+  });
+
+
+  $stateProvider.state('experts-state', {
+    url:"/experts-state",
+    templateUrl: "partials/experts-state.html"
   });
 });

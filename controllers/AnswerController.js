@@ -1,3 +1,3 @@
-experts.controller('ExpertsCtrl', function ExpertsCtrl($scope, $stateParams, QuestionsFactory, UtilitiesFactory) {
-
-});
+// experts.controller('ExpertsCtrl', function ExpertsCtrl($scope, $stateParams, QuestionsFactory, UtilitiesFactory) {
+//
+// });

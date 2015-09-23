@@ -2,14 +2,16 @@
 
 <h3><a ng-click="showquestion = showquestion ? false : true" class="btn btn-primary">Ask a question</a></h3>
 
-<button ui-sref="experts-state"type="submit" class="btn btn-primary pull-right" id="expert">Log in as an expert.</button>
+<button ui-sref="experts-state" type="submit" class="btn btn-primary pull-right" id="expert">Log in as an expert.</button>
 
 <div ng-show = "showquestion">
-  <form>
+  <form ng-submit="QuestionsFactory.addQuestion()" class="form-inline" role="form">
     <div class = "form-group">
-      <label for="question">Ask your question</label>
-      <input id = "question" type="text" name="question">
-      <button type="submit" class="btn btn-primary">submit</button>
+      <label>Ask your question</label>
+      <input ng-model="QuestionsFactory.userQuestion" type="text" class="form-control">
     </div>
+    <button type="submit" class="btn btn-primary">submit</button>
   </form>
 </div>
+
+<div ui-view></div>
