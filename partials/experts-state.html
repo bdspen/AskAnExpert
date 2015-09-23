@@ -6,10 +6,10 @@
     <button class="btn btn-primary" ng-click="showanswer = showanswer ? false : true">Answer this question</button>
   <div ng-show="showanswer">
     <h4>{{ item.input }}</h4>
-    <form ng-submit="addAnswer()" class="form-inline" role="form">
+    <form ng-submit="QuestionsFactory.addAnswer()" class="form-inline" role="form">
       <div class = "form-group">
         <label>Answer:</label>
-        <input type="text" class="form-control">
+        <input ng-model="QuestionsFactory.expertAnswer" type="text" class="form-control">
       </div>
       <button type="submit" class="btn btn-primary">submit</button>
     </form>

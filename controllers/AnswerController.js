@@ -3,5 +3,6 @@ experts.controller('AnswersCtrl', function AnswersCtrl($scope, QuestionsFactory,
   $scope.addAnswer = function() {
     $scope.questions.answers.push({ answerInput: $scope.expertAnswer });
     $scope.expertAnswer = null;
+    $scope.QuestionsFactory = QuestionsFactory;
   }
 });
