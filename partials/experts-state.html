@@ -1,33 +1,27 @@
 <h2>Expert</h2>
 <h3>Here are some questions you could answer.</h3>
-<div ng-show="questions.length">
-  <div ng-repeat="item in questions">
-    <a ui-sref="answered-questions({ questionId: item.id })">{{ item.input }}</a>
-    <button class="btn btn-primary" ng-click="showanswer = showanswer ? false : true">Answer this question</button>
-
-  <div ng-show="showanswer">
-    <h4>{{ item.input }}</h4>
-
-<div ng-controller="AnswersCtrl">
-    <form ng-submit="addAnswer()" class="form-inline" role="form">
+<div ng-show="QuestionsFactory.questions.length">
+  <ul>
+    <li ng-repeat="item in QuestionsFactory.questions">
+      <a ui-sref="item({ questionId: item.id })">{{ item.input }}</a>
+    </li>
+  </ul>
+  <form ng-submit="addAnswer()" class="form-inline" role="form">
       <div class = "form-group">
         <label>Answer:</label>
         <input ng-model="expertAnswer" type="text" class="form-control">
       </div>
       <button type="submit" class="btn btn-primary">submit</button>
     </form>
+
+
+
+<div ng-show="QuestionsFactory.questions.length">
+  <h3>Answers</h3>
+  <ul>
+    <li ng-repeat="item in QuestionsFactory.questions">
+      {{ item.answers}}
+    </li>
+  </ul>
+    {{ QuestionsFactory.questions }}
 </div>
-
-  </div>
-
-  </div>
-
-</div>
-    <button ui-sref="home" class="btn btn-primary">Back to Home</button>
-
-<!-- <div ng-controller="AnswersCtrl">
-<div ng-repeat="item in answers">
-<p>{{ item.answerInput }}</p>
-</div>
-</div> -->
-<div ui-view></div>

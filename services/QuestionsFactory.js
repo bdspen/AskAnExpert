@@ -6,6 +6,7 @@ experts.factory('QuestionsFactory', function QuestionsFactory() {
     factory.userQuestion = null;
   };
 
+
   // factory.addAnswer = function() {
   //   factory.questions.answers.push({ answerInput: $scope.expertAnswer });
   //   factory.expertAnswer = null;

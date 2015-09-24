@@ -1,8 +1,10 @@
 experts.controller('AnswersCtrl', function AnswersCtrl($scope, QuestionsFactory, $stateParams, UtilitiesFactory) {
-  $scope.questions = UtilitiesFactory.findById(QuestionsFactory.questions, QuestionsFactory.questions.Id);
+  $scope.question = UtilitiesFactory.findById(QuestionsFactory.questions, $stateParams.questionId);
+  $scope.QuestionsFactory = QuestionsFactory;
+
   $scope.addAnswer = function() {
-    $scope.questions.answers.push({ answerInput: $scope.expertAnswer });
+    $scope.question.answers.push({ name: $scope.expertAnswer });
+    // $scope.question.answers.push("hello");
     $scope.expertAnswer = null;
-    $scope.QuestionsFactory = QuestionsFactory;
   }
 });

@@ -2,7 +2,7 @@
 
 <h3><a ng-click="showquestion = showquestion ? false : true" class="btn btn-primary">Ask a question</a></h3>
 
-<button ui-sref="experts-state" type="submit" class="btn btn-primary pull-right" id="expert">Log in as an expert.</button>
+<!-- <button ui-sref="experts-state" type="submit" class="btn btn-primary pull-right" id="expert">Log in as an expert.</button> -->
 
 <div ng-show = "showquestion">
   <form ng-submit="QuestionsFactory.addQuestion()" class="form-inline" role="form">
@@ -14,8 +14,11 @@
   </form>
 </div>
 
-<div ng-show="QuestionsFactory.questions.length">
-  {{ QuestionsFactory.questions }}
+<div ng-show="questions.length">
+  <h3>Questions To be answered</h3>
+  <ul>
+    <li ng-repeat="item in questions">
+      <a ui-sref="answered-questions({ questionId: item.id })">{{ item.input }}</a>
+    </li>
+  </ul>
 </div>
-
-<div ui-view></div>
