@@ -27,10 +27,14 @@
       <h2 ng-show="questions.length && filtered.length">Questions</h2>
       <h2 ng-show="questions.length && !filtered.length">No matches</h2>
       <ul>
-        <li ng-repeat="item in filtered = (questions | filter:query)">{{ item.input }}</li>
+        <li ng-repeat="item in filtered = (questions | filter:query)">
+          <a ui-sref="answered-questions({ questionId: item.id })">{{ item.input }}</a>
+        </li>
       </ul>
+    </div>
 
   <h3>Questions To be answered</h3>
+
   <ul>
     <li ng-repeat="item in questions">
       <a ui-sref="answered-questions({ questionId: item.id })">{{ item.input }}</a>
