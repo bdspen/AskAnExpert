@@ -1,7 +1,7 @@
 <div ng-show="question.answers.length">
   <h2>Answers for {{ question.input }}</h2>
   <ul>
-    <li ng-repeat="item in question.answers">
+    <li ng-repeat="item in question.answers | orderBy: '-rating'">
 <span class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="rate(item, 1)"></span>
 <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" ng-click="rate(item, -1)"></span>
 
